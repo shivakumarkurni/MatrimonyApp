@@ -7,11 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import com.hcl.matrimony.entity.InterestShown;
 
-
 @Repository
-public interface InterestShownRepository extends JpaRepository<InterestShown, Long> {
-
-	public List<InterestShown> findByFromMobileAndTargetMobile(Long fromMobile, Long targetMobile);
+public interface NotificationsRepository extends JpaRepository<InterestShown, Long> {
 	
+	List<InterestShown> findByTargetMobile(Long mobileNo);
 
 }

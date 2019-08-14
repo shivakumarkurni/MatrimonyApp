@@ -34,7 +34,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 		LOGGER.info("UserProfileServiceImpl :: "+mobile+", "+place+", "+occupation+"-- start");
 		
 		Object returnObject= "No recors found for matching profile.";
-		UserProfiles userProfiles = userProfilesRepository.findByMobile(mobile);
+		UserProfiles userProfiles = userProfilesRepository.findByMobile(mobile).get(0);
 		List<UserProfiles> list = null;
 		if(userProfiles!=null){
 			if(place!=null && occupation!=null){
