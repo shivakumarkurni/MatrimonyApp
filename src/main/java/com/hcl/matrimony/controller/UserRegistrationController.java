@@ -23,6 +23,7 @@ import com.hcl.matrimony.service.UserRegistrationService;
 public class UserRegistrationController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserRegistrationController.class);
+	
 	@Autowired
 	private UserRegistrationService userRegistrationService;
 	
@@ -33,7 +34,7 @@ public class UserRegistrationController {
 	@PostMapping("/profile")
 	public ResponseEntity<String> registeration(@RequestBody RegistrationDto resitrationDto){
 		
-		LOGGER.error(" UserRegistrationController :: "+resitrationDto);
+		LOGGER.info(" UserRegistrationController :: "+resitrationDto);
 		
 		return new ResponseEntity<>(userRegistrationService.registration(resitrationDto), HttpStatus.CREATED);
 	}

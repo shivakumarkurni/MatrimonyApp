@@ -10,11 +10,13 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "USER_PROFILES")
 @Setter
 @Getter
+@ToString
 public class UserProfiles {
 
 	@Id

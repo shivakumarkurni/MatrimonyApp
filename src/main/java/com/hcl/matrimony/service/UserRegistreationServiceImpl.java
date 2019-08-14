@@ -29,16 +29,17 @@ public class UserRegistreationServiceImpl implements UserRegistrationService {
 	@Override
 	public String registration(RegistrationDto registrationDto) {
 		
-		LOGGER.error("UserRegistreationServiceImpl :: registration - start");
+		LOGGER.info("UserRegistreationServiceImpl :: registration - start");
 		
 		String returnValue = "Registration failed!";
 		UserProfiles userProfiles = new UserProfiles();
+		registrationDto.setGender(registrationDto.getGender().toUpperCase());
 		BeanUtils.copyProperties(registrationDto, userProfiles);
 		if(userProfileRepository.save(userProfiles)!=null){
 			returnValue = "Registration successfully.";
 		}
 		
-		LOGGER.error("UserRegistreationServiceImpl :: registration - End");
+		LOGGER.info("UserRegistreationServiceImpl :: registration - End");
 		
 		return returnValue;
 	}
